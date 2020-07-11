@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -35,12 +36,16 @@ body {
     overflow-x: hidden;
     position: relative;
     color: #fff;
+    @extend %ubuntu-light;
+    font-size: 17px;
+    line-height: 26px;
 }
 
 .container {
     max-width: 1270px;
     padding: 0 15px;
     margin: 0 auto;
+    z-index: 1;
 }
 
 .page-section {
@@ -51,9 +56,26 @@ body {
     background-size: cover;
     position: relative;
     padding: 74px 0 50px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(119.35deg, rgba(23, 26, 28, 0.72) 0%, #5E5E57 100%);
+        opacity: 0.15;
+    }
 }
 
-.title {}
+.title {
+    @extend %sf-regular;
+    font-size: 44px;
+    line-height: 53px;
+    padding-left: 25px;
+    margin-bottom: 55px;
+}
 
 .scroll-btn {
     padding: 13px 0 30px;
