@@ -57,8 +57,6 @@
 
 .top {
     background-image: url(../images/top-bg.jpg);
-    display: flex;
-    align-items: flex-end;
 
     &::before {
         content: '';
@@ -69,6 +67,12 @@
         bottom: 0;
         background: radial-gradient(45.97% 54.43% at 50% 45.57%, rgba(23, 26, 28, 0) 50.28%, rgba(23, 26, 28, 0.00225974) 50.29%, rgba(4, 5, 5, 0.820343) 58.72%, rgba(5, 5, 6, 0.792703) 80.08%, #000000 87.89%);
         opacity: 0.4;
+    }
+
+    &__wrapper {
+        height: calc(100vh - 75px);
+        display: flex;
+        align-items: flex-end;
     }
 
     &__inner {
@@ -104,6 +108,136 @@
         }
     }
 }
+
+.products {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 50px;
+    }
+
+    &__text {
+        max-width: 440px;
+
+        p {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__slider-box {
+        position: relative;
+        padding-top: 110px;
+    }
+
+    &__slider-text {
+        @extend %ubuntu-medium;
+        position: absolute;
+        bottom: 30px;
+        left: -250px;
+        max-width: 285px;
+        width: 100%;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: right;
+        z-index: 5;
+    }
+
+    &__slider {
+        max-width: 560px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 560px;
+            height: 276px;
+            border: 4px solid #fff;
+            top: -15px;
+            right: -17px;
+        }
+    }
+}
+
+.slider-btn {
+    padding: 16px 26px;
+    border: none;
+    background-color: #fff;
+    position: absolute;
+    bottom: -45px;
+    right: 0;
+    z-index: 5;
+    cursor: pointer;
+    outline: none;
+
+    svg {
+        stroke: #000;
+    }
+
+    &__left {
+        right: 60px;
+    }
+
+    &.slick-disabled {
+        background-color: #000;
+
+        svg {
+            stroke: #fff;
+        }
+    }
+}
+
+.benefits {
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item {
+        display: flex;
+        margin-bottom: 100px;
+        align-items: flex-end;
+    }
+
+    &__num {
+        @extend %ubuntu-bold;
+        font-size: 36px;
+        line-height: 41px;
+        margin-right: 10px;
+    }
+
+    &__img {
+        position: relative;
+        margin-right: 32px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 193px;
+            height: 128px;
+            border: 2px solid #fff;
+            top: -12px;
+            right: -12px;
+            z-index: -1;
+        }
+    }
+
+    &__info {
+        width: 300px;
+    }
+
+    &__info-title {
+        @extend %ubuntu-bold;
+        width: 123px;
+        margin-bottom: 10px;
+        font-size: 21px;
+        line-height: 24px;
+    }
+    &__info-text {
+        font-size: 15px;
+        line-height: 19px;
+    }
+}
+
 
 
 
